@@ -3,6 +3,7 @@ import pygame, os, sys
 
 file_dir = os.getcwd() # get the current directory
 file_name = "EmptyTest_data"        #USE SAME NAME AS FOLDER NAME
+
 file_dir = file_dir + "/" + file_name
 pygame.font.init()
 #import the engine path file
@@ -19,12 +20,10 @@ right_border = w - 40
 top_border = 40
 bottom_border = h - 40
 # -----------------------------------------------
-
 #create variable stuff
 clock = pygame.time.Clock()
 gameplay = True
 vel = 10
-
 
 #background
 display = []
@@ -37,13 +36,13 @@ display_sprite = []
 #foreground
 foreground = []
 
-
 #text_foreground
 text_foreground = []
 
 
 # main game function --------------------------------------------------------------
 def main_game(object_head, vel):
+    #EXAMPLES  
     if keys[pygame.K_LEFT]:
         object_head = game_engine.player.left(object_head, vel, left_border)
     elif keys[pygame.K_RIGHT]:
