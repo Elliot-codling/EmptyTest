@@ -5,9 +5,7 @@ import pygame, os, sys
 
 file_dir = os.getcwd() # get the current directory
 pygame.font.init()
-print(f"{file_dir}/EmptyTest_data/engine")
-sys.path.append(f"{file_dir}/EmptyTest_data/engine")
-import game_engine_004 as game_engine
+form engine import game_engine_004 as game_engine
 
 # create window ---------------------------------
 w, h = 780, 780
