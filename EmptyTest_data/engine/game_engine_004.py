@@ -47,8 +47,6 @@ class properties_text:          #this is to define properties of text
         self.y = y
 
 class update:
-    global debug_state
-    debug_state = False
     def pygame_debug():
         import sys              #import system files
         #steps on installing pygame / pip onto os
@@ -103,12 +101,12 @@ class update:
         pygame.time.delay(100)              #stop game for 0.1 seconds
 
 
-    def define(name, w, h):             #define the window
-        global window                   #need to globalise to update            
+    def define(name, w, h):             #define the window          
         window = pygame.display.set_mode((w, h))                #create window  
         pygame.display.set_caption(name)                        #create name
+        return window
 
-    def window(display, display_sprite, foreground, text_foreground, clock, debug):                #update routine
+    def window(window, display, display_sprite, foreground, text_foreground, clock, debug):                #update routine
         length = len(display)       #find the length of the display array to find how many textures there are to load
         length = int(length)        #turn the str into int
 
@@ -205,50 +203,30 @@ class player:
                 return list[index].name
 
     
-    def left(player, vel):
+    def left(player, vel, border):
         #check if the player x coord is hitting the border
-        if player.x > left_border:
+        if player.x > border:
             player.x -= vel
 
         return player
 
-    def right(player, vel):
+    def right(player, vel, border):
          
-        if player.x < right_border:
+        if player.x < border:
             player.x += vel
 
         return player
 
-    def up(player, vel):
+    def up(player, vel, border):
         
-        if player.y > top_border:
+        if player.y > border:
             player.y -= vel
 
         return player
 
-    def down(player, vel):
+    def down(player, vel, border):
         
-        if player.y < bottom_border:
+        if player.y < border:
             player.y += vel
 
         return player
-
-    #define the left border of the screen to stop moving
-    def left_border(x):
-        global left_border
-        left_border = x
-
-    #define the right border of the screen to stop moving
-    def right_border(x):
-        global right_border
-        right_border = x
-
-    #define the up border of the screen to stop moving
-    def top_border(x):
-        global top_border
-        top_border = x
-
-    #define the bottom border of the screen to stop moving
-    def bottom_border(x):
-        global bottom_border
-        bottom_border = x
