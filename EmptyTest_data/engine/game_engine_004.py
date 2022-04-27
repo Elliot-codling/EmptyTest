@@ -16,10 +16,6 @@ class music():
         pygame.mixer.music.stop()
         pygame.mixer.music.set_volume(pre_volume)
 
-class properties:
-    #this is a game_engine properties class that will define the rules
-    pass
-
 class properties_object:            #this is to define the properties of a sprite
 
     def __init__(self, name, texture, x, y, width, height, alpha):
