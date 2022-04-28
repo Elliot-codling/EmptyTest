@@ -1,14 +1,10 @@
 #CREATED BY ELLIOT CODLING
-import pygame, os, sys
+import pygame, os
 
 file_dir = os.getcwd() # get the current directory
-file_name = "EmptyTest_data"        #USE SAME NAME AS FOLDER NAME
-
-file_dir = file_dir + "/" + file_name
 pygame.font.init()
-#import the engine path file
-sys.path.append("{}/engine".format(file_dir))
-import game_engine_004 as game_engine
+
+from engine import game_engine_004 as game_engine
 
 # create window ---------------------------------
 w, h = 780, 780
