@@ -17,9 +17,7 @@ class music():
         pygame.mixer.music.set_volume(pre_volume)
 
 class properties_object:            #this is to define the properties of a sprite
-
     def __init__(self, name, texture, x, y, width, height, alpha):
-
         self.name = name
         self.x = x
         self.y = y
@@ -35,7 +33,6 @@ class properties_object:            #this is to define the properties of a sprit
         #transform the texture to correct size when creating object
         self.texture = pygame.transform.scale(texture, (width, height))
 class properties_text:          #this is to define properties of text
-
     def __init__(self, name, texture, x, y):
         self.name = name
         self.texture = texture

@@ -12,7 +12,7 @@ import game_engine_004 as game_engine
 
 # create window ---------------------------------
 w, h = 780, 780
-window = game_engine.update.define("Snake Game", w, h)
+window = game_engine.update.define("Empty Test", w, h)
 
 #borders to stop moving off screen
 left_border = 40
@@ -27,7 +27,8 @@ vel = 10
 
 #background
 display = []
-#object_head = game_engine.properties_object(name, texture, x, y, width, height, alpha)
+#object_head_texture = pygame.image.load("{}/textures/object_head.png".format(file_dir))
+#object_head = game_engine.properties_object(name, object_head_texture, x, y, width, height, alpha)
 #dispay += [object_head]
 
 #display sprites
@@ -68,11 +69,9 @@ while run:
     if keys[pygame.K_ESCAPE]:
         run = False
 
-    #game_engine.update.list_debug(display, display_sprite, foreground, text_foreground, clock)
-    # -----------------------------------------------------------------
+    #game_engine.update.list_debug(display, display_sprite, foreground, text_foreground, clock)     #uncomment to debug
     # update screen
-    
-    game_engine.update.window(window, display, display_sprite, foreground, text_foreground, clock, True)     #update the window
-    clock.tick(10)  #limit to 10 fps
+    game_engine.update.window(window, display, display_sprite, foreground, text_foreground, clock, False)     #update the window
+    clock.tick(60)  #limit to 60 fps
 
 pygame.quit()
