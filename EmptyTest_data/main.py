@@ -1,6 +1,7 @@
 #CREATED BY ELLIOT CODLING
 import pygame, os
 
+print("hello this is a change. :)")
 file_dir = os.getcwd() # get the current directory
 pygame.font.init()
 
